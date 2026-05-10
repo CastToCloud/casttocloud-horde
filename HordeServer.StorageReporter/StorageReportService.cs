@@ -26,7 +26,7 @@ internal class StorageReporterState : SingletonBase
 /// <summary>
 /// Periodically gathers storage stats and dispatches a formatted report to every configured sender.
 /// </summary>
-public sealed class StorageReportService : IHostedService, IAsyncDisposable
+internal sealed class StorageReportService : IHostedService, IAsyncDisposable
 {
 	private readonly IReadOnlyList<IStorageReportSender> _senders;
 	private readonly IOptionsMonitor<StorageReporterConfig> _config;
