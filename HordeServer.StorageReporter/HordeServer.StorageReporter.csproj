@@ -35,27 +35,27 @@
 
   <!-- Plugin licensing -->
   <ItemGroup>
-    <None Include="..\LICENSE.md" Pack="true" PackagePath="" />
+    <None Include="../LICENSE.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <!-- References to Horde packages -->
   <ItemGroup>
-    <ProjectReference Include="$(HordeSharedRoot)\EpicGames.Core\EpicGames.Core.csproj">
+    <ProjectReference Include="..\..\..\..\Shared\EpicGames.Core\EpicGames.Core.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
-    <ProjectReference Include="$(HordeSharedRoot)\EpicGames.Horde\EpicGames.Horde.csproj">
+    <ProjectReference Include="..\..\..\..\Shared\EpicGames.Horde\EpicGames.Horde.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
-    <ProjectReference Include="$(HordeSharedRoot)\EpicGames.Slack\EpicGames.Slack.csproj">
+    <ProjectReference Include="..\..\..\..\Shared\EpicGames.Slack\EpicGames.Slack.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
-    <ProjectReference Include="$(HordeRoot)\HordeServer.Shared\HordeServer.Shared.csproj">
+    <ProjectReference Include="..\..\..\HordeServer.Shared\HordeServer.Shared.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
-    <ProjectReference Include="$(HordeRoot)\Plugins\Storage\HordeServer.Storage\HordeServer.Storage.csproj">
+    <ProjectReference Include="..\..\Storage\HordeServer.Storage\HordeServer.Storage.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
-    <ProjectReference Include="$(HordeRoot)\Plugins\Build\HordeServer.Build\HordeServer.Build.csproj">
+    <ProjectReference Include="..\..\Build\HordeServer.Build\HordeServer.Build.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
   </ItemGroup>
