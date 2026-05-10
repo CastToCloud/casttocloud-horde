@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>CastToCloud.Horde.StorageReporter</RootNamespace>
+    <AssemblyName>HordeServer.StorageReporter</AssemblyName>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+    <Configurations>Debug;Release;Analyze</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Analyze|AnyCPU' ">
+    <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <!-- Plugin information -->
+  <PropertyGroup>
+    <PackageId>HordeServer.StorageReporter</PackageId>
+    <Authors>CastToCloud</Authors>
+    <Description>Periodic storage usage report for Horde</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageProjectUrl>https://casttocloud.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/casttocloud/casttocloud-horde</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <!-- Plugin licensing -->
+  <ItemGroup>
+    <None Include="..\LICENSE.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <!-- References to Horde packages -->
+  <ItemGroup>
+    <ProjectReference Include="$(HordeSharedRoot)\EpicGames.Core\EpicGames.Core.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="$(HordeSharedRoot)\EpicGames.Horde\EpicGames.Horde.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="$(HordeSharedRoot)\EpicGames.Slack\EpicGames.Slack.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="$(HordeRoot)\HordeServer.Shared\HordeServer.Shared.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="$(HordeRoot)\Plugins\Storage\HordeServer.Storage\HordeServer.Storage.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="$(HordeRoot)\Plugins\Build\HordeServer.Build\HordeServer.Build.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <!-- References to external packages -->
+  <ItemGroup>
+    <PackageReference Include="BetterConsoleTables" Version="1.1.3" />
+  </ItemGroup>
+
+</Project>
